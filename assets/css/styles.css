@@ -146,13 +146,16 @@ li {
 .landing__page {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcome__text {
   color: #fff;
-  position: absolute;
+  /* position: absolute;
   top: 47%;
-  left: 45%;
+  left: 45%; */
   opacity: 0;
   animation: fade-in 1s ease-in forwards 2 alternate;
 }
@@ -248,7 +251,7 @@ li {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 20%;
+  height: 10%;
 }
 
 .hero > h1 {
@@ -262,11 +265,11 @@ li {
 .projects {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   column-gap: 0;
   padding: 0;
   width: 100%;
-  height: 80%;
+  height: 90%;
   overflow: scroll;
 }
 
@@ -404,7 +407,8 @@ Contact page
 }
 
 .panel__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
   height: 200px;
   width: 50vw;
   position: absolute;
@@ -413,7 +417,6 @@ Contact page
 
 .panel {
   border: 2px solid black;
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;

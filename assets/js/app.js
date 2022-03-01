@@ -104,7 +104,7 @@ const columnClasses = [
   "grid-column-span-2",
   "grid-column-span-3",
 ];
-const welcomePhrases = ["Welcome", "tervetuloa", "bienvenue", "fáilte"];
+const welcomePhrases = ["Welcome"];
 
 carouselBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -144,8 +144,8 @@ const loadProjects = () => {
                 <p style="background-image: url(${project.backgroundImage})">${project.description}</p>
             </div>
     
-            <div class="ribbon git"><img src="../images/github-svgrepo-com.svg" alt=""><a href=${project.ghRepository}></a></img></div>
-            <div class="ribbon deployed"><img src="../images/www.svg" alt=""><a href=${project.deployed}></a></img></div>
+            <a href=${project.ghRepository}><div class="ribbon git"><img src="../images/github-svgrepo-com.svg" alt=""></img></div></a>
+            <a href=${project.deployed}><div class="ribbon deployed"><img src="../images/www.svg" alt=""></img></div></a>
     
         </div>
                 
