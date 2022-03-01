@@ -26,7 +26,7 @@ Variables
   --clr-primary-9: hsl(205, 90%, 88%);
   --clr-primary-10: hsl(205, 100%, 96%);
   /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-1: rgb(36, 32, 32);
   --clr-grey-2: hsl(211, 39%, 23%);
   --clr-grey-3: hsl(209, 34%, 30%);
   --clr-grey-4: hsl(209, 28%, 39%);
@@ -368,42 +368,39 @@ Contact page
 */
 
 .contact__page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
   position: relative;
   overflow: scroll;
+  background-color: var(--clr-grey-1)
 }
 
-.icon {
+.contact__page > img {
   position: absolute;
-  height: 250px;
-  width: 250px;
-  left: 50%;
-  top: 40%;
-  border: 1px #fff;
+  top: 25%;
+  height: 200px;
+  width: auto;
+  animation: bounce 2s forwards infinite alternate;
 }
 
-.panel__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  /* height:  500px;
-  width: 1000px; */
-  border: 1px #fff;
-  left: 50%;
-  top: 60%;
+@keyframes bounce {
+
+  25% {
+    transform: translateY(5%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  75% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(-5%);
+  }
 }
 
-.right__panel {
-  border: 1px solid #fff;
-  height: 300px;
-  width: 300px;
-}
 
-.left__panel {
-  border: 1px solid #fff;
-  height: 300px;
-  width: 300px;
-}
 
