@@ -93,22 +93,33 @@ li {
   position: relative;
 }
 
+.nav {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  border: 1px solid white
+}
+
 .slide {
   position: absolute;
   inset: 0;
   opacity: 0;
+  transition: 200ms ease-in-out;
+  transition-delay: 200ms
 }
 
 .slide[data-active] {
-  opacity: 1
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0;
 }
 
 .landing__page {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
-.landing__page h1 {
+.welcome__text {
   color: #fff;
   position: absolute;
   top: 47%;
@@ -146,10 +157,11 @@ li {
   height: 30px;
   width: 30px;
   border-radius: 100%;
-  border: 1px solid white;
+  border: 3px solid gold;
   background-color: #fff;
   animation: pulse 1s ease-in;
   cursor: pointer;
+  z-index: 2;
 }
 
 .left__toggle {
@@ -214,9 +226,9 @@ li {
   position: absolute;
 }
 
-.projects__title {
+/* .projects__title {
   opacity: 0;
-}
+} */
 
 .projects {
   display: grid;
@@ -238,6 +250,7 @@ tile classes
 .project__tile {
   height: 300px;
   width: 600px;
+  border: 0.5px solid #fff;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -255,6 +268,7 @@ tile classes
 .project__tile > .panel {
   background-color: white;
   position: absolute;
+  border-radius: 10%;
   height: 90%;
   left: 5%;
   top: 5%;
@@ -317,3 +331,42 @@ grid-column classes
 .grid-column-span-3 {
   grid-column: span 3;
 }
+
+/*
+==========
+Contact page
+==========
+*/
+
+.contact__text {
+  position: relative;
+  left: 50%;
+}
+
+.contact__page {
+  height: 100vh;
+  width: 100vw;
+  /* position: absolute; */
+}
+
+.icon {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  left: 50%;
+  top: 40%;
+  border: 1px #fff;
+}
+
+.panel__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height:  500px;
+  width: 1000px;
+  border: 1px #fff;
+  left: 50%;
+  top: 60%;
+}
+

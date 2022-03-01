@@ -12,56 +12,88 @@ const projects = [
   {
     id: 2,
     name: "Team Profile Generator",
-    ghRepository: "",
+    ghRepository: "https://github.com/rrich-kray/team-profile-generator",
     deploymentLink: "",
     description:
       "Node.js application that programmatically generates HTML containing a team profile",
-    backgroundImage: "https://wallpaperaccess.com/full/4091251.png",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/team-profile-generator/main/assets/images/screen1.png",
   },
   {
     id: 3,
     name: "Weather Dashboard",
-    ghRepository: "",
-    deploymentLink: "",
+    ghRepository: "https://github.com/rrich-kray/weather-dashboard",
+    deploymentLink: "https://rrich-kray.github.io/weather-dashboard/",
     description:
       "Dashboard that displays current and forecasted weather data from the OpenWeatherMap API",
-    backgroundImage: "https://wallpaperaccess.com/full/4091251.png",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/weather-dashboard/main/assets/images/screen1.png",
   },
   {
     id: 4,
-    name: "Weather Dashboard",
-    ghRepository: "",
+    name: "Professional README Generator",
+    ghRepository: "https://github.com/rrich-kray/professional-readme-generator",
     deploymentLink: "",
     description:
-      "Dashboard that displays current and forecasted weather data from the OpenWeatherMap API",
-    backgroundImage: "https://wallpaperaccess.com/full/4091251.png",
+      "Programmatically generates professional README files using Node.js.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/professional-readme-generator/main/assets/images/screen1.png",
   },
   {
     id: 5,
-    name: "Weather Dashboard",
+    name: "Taskinator",
     ghRepository: "",
-    deploymentLink: "",
-    description:
-      "Dashboard that displays current and forecasted weather data from the OpenWeatherMap API",
-    backgroundImage: "https://wallpaperaccess.com/full/4091251.png",
+    deploymentLink: "https://rrich-kray.github.io/taskinator/",
+    description: "To-Do list application.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/taskinator/main/assets/images/screen1.png",
   },
   {
     id: 6,
-    name: "Weather Dashboard",
-    ghRepository: "",
-    deploymentLink: "",
-    description:
-      "Dashboard that displays current and forecasted weather data from the OpenWeatherMap API",
-    backgroundImage: "https://wallpaperaccess.com/full/4091251.png",
+    name: "Horiseon Landing Page",
+    ghRepository: "https://github.com/rrich-kray/Your-Landing-Spot-for-Success",
+    deploymentLink:
+      "https://rrich-kray.github.io/Your-Landing-Spot-for-Success/",
+    description: "Landing page for fictional company.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/Your-Landing-Spot-for-Success/main/Develop/assets/images/landing-page.png",
   },
   {
     id: 7,
-    name: "Weather Dashboard",
-    ghRepository: "",
-    deploymentLink: "",
+    name: "Random Password Generator",
+    ghRepository: "https://github.com/rrich-kray/password-generator",
+    deploymentLink: "https://rrich-kray.github.io/password-generator/",
+    description: "Generates a random password of specified length and content.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/password-generator/main/Develop/assets/images/RPG.png",
+  },
+  {
+    id: 8,
+    name: "Express Note Taker",
+    ghRepository: "https://github.com/rrich-kray/express-note-taker",
+    deploymentLink: "https://note-taker-rrich-kray.herokuapp.com/",
     description:
-      "Dashboard that displays current and forecasted weather data from the OpenWeatherMap API",
-    backgroundImage: "https://wallpaperaccess.com/full/4091251.png",
+      "Application that stores user notes within an express.js server.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/password-generator/main/Develop/assets/images/RPG.png",
+  },
+  {
+    id: 9,
+    name: "Taskmaster Pro",
+    ghRepository: "https://github.com/rrich-kray/Taskmaster-Pro",
+    deploymentLink: "https://rrich-kray.github.io/Taskmaster-Pro/",
+    description: "New and improved task tracking app.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/Taskmaster-Pro/main/assets/images/screen2.png",
+  },
+  {
+    id: 10,
+    name: "Ecommerce Backend",
+    ghRepository: "https://github.com/rrich-kray/ecommerce-product-database",
+    deploymentLink: "",
+    description: "Database for a hypothetical ecommerce website.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/rrich-kray/ecommerce-product-database/master/assets/images/screen1.png",
   },
 ];
 
@@ -71,6 +103,7 @@ const columnClasses = [
   "grid-column-span-2",
   "grid-column-span-3",
 ];
+const welcomePhrases = ["Welcome", "tervetuloa", "bienvenue", "fáilte"];
 
 carouselBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -86,58 +119,50 @@ carouselBtns.forEach((btn) => {
     slides.children[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
 
-    let start = Date.now();
-
-    let timer = setInterval(() => {
-      let timePassed = Date.now() - start;
-      if (timePassed >= 2000) {
-        clearInterval(timer);
-        return;
-      }
-
-      //   fadeOut(timePassed, document.querySelector(".landing__page"));
-
-      if (offset === 1) {
-        fadeIn(document.querySelector(".projects__title"));
-        return;
-      }
-      //   fadeIn(timePassed, document.querySelector(".contact-page"));
-
-      contactPageFadeIn(timePassed);
-    }, 20);
+    if (
+      document
+        .querySelector("[data-active]")
+        .classList.contains("projects__page")
+    ) {
+      loadProjects();
+      return;
+    } else if (
+      document.querySelector("[data-active]").classList.contains("conact__page")
+    ) {
+      loadContactPage();
+      remove;
+    }
   });
 });
 
-const fadeOut = (element) => {
-  //   const currentPos = element.getBoundingClientRect();
-  //   console.log(currentPos);
-  element.style.top -= `${5}%`;
-  element.style.opacity -= 0.01;
-  console.log(element.style.top);
-};
-
-const fadeIn = (element) => {
-  //   const currentPos = element.getBoundingClientRect();
-  //   console.log(currentPos);
-  element.style.top += `${5}px`;
-  element.style.opacity += 0.01;
-};
-
-projects.forEach((project) => {
-  let projectsSection = document.querySelector(".projects");
-  projectsSection.innerHTML += `
-
-    <div class="project__tile" style="background-image: url(${project.backgroundImage})">
-
-        <div class="panel">
-            <h5 style="background-image: url(${project.backgroundImage})">${project.name}</h5>
-            <p style="background-image: url(${project.backgroundImage})">${project.description}</p>
+const loadProjects = () => {
+  projects.forEach((project) => {
+    let projectsSection = document.querySelector(".projects");
+    projectsSection.innerHTML += `
+    
+        <div class="project__tile" style="background-image: url(${project.backgroundImage})">
+    
+            <div class="panel">
+                <h5 style="background-image: url(${project.backgroundImage})">${project.name}</h5>
+                <p style="background-image: url(${project.backgroundImage})">${project.description}</p>
+            </div>
+    
+            <div class="ribbon git"><img src="../images/github-svgrepo-com.svg" alt=""><a href=${project.ghRepository}></a></img></div>
+            <div class="ribbon deployed"><img src="../images/www.svg" alt=""><a href=${project.deployed}></a></img></div>
+    
         </div>
+                
+        `;
+  });
+};
 
-        <div class="ribbon git"><img src="../images/github-svgrepo-com.svg" alt=""><a href=${project.ghRepository}></a></img></div>
-        <div class="ribbon deployed"><img src="../images/www.svg" alt=""><a href=${project.deployed}></a></img></div>
+const loadContactPage = () => {
+  let contactSection = document.querySelector(".contact__page");
+};
 
-    </div>
-            
-    `;
-});
+setInterval(() => {
+  const landingPage = document.querySelector(".landing__page");
+  landingPage.innerHTML = `<h1 class="welcome__text">${
+    welcomePhrases[Math.floor(Math.random() * welcomePhrases.length)]
+  }</h1>`;
+}, 4000);
