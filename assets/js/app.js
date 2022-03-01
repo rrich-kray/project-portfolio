@@ -98,7 +98,7 @@ const projects = [
 ];
 
 const carouselBtns = document.querySelectorAll("[data-carousel-button]");
-const navBtns = document.querySelector("[data-nav-button]");
+const navBtns = document.querySelectorAll("[data-nav-button]");
 const columnClasses = [
   "grid-column-span-1",
   "grid-column-span-2",
@@ -152,6 +152,16 @@ const loadProjects = () => {
         `;
   });
 };
+
+navBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const slideContainer = btn
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
+
+    const activeSlide = slideContainer.querySelector("[data-active]");
+  });
+});
 
 const formatNavBtns = () => {};
 

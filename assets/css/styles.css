@@ -153,9 +153,6 @@ li {
 
 .welcome__text {
   color: #fff;
-  /* position: absolute;
-  top: 47%;
-  left: 45%; */
   opacity: 0;
   animation: fade-in 1s ease-in forwards 2 alternate;
 }

@@ -13,9 +13,11 @@
     <div class="carousel" data-carousel>
         <navbar class="nav">
             <ul class="nav__list">
-                <li class="nav__item"><button class="home__btn" data-id="landing__page">Home</button></li>
-                <li class="nav__item"><button class="projects__btn" data-id="projects__page">Projects</button></li>
-                <li class="nav__item"><button class="contact__btn" data-id="contact__page">Contact</button></li>
+                <li class="nav__item"><button class="btn home__btn" data-nav-button="landing__page">Home</button></li>
+                <li class="nav__item"><button class="btn projects__btn"
+                        data-nav-button="projects__page">Projects</button></li>
+                <li class="nav__item"><button class="btn contact__btn" data-nav-button="contact__page">Contact</button>
+                </li>
             </ul>
         </navbar>
         <ul data-slides>
@@ -25,9 +27,7 @@
             <li class="slide projects__page">
                 <hero class="hero">
                 </hero>
-                <section class="projects">
-
-                </section>
+                <section class="projects"></section>
             </li>
             <li class="slide contact__page">
                 <img src="./assets/images/message-in-bottle.svg" alt="message in a bottle">
