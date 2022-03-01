@@ -94,10 +94,38 @@ li {
 }
 
 .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   position: absolute;
   top: 0%;
-  border: 1px solid white
+  height: 100px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__item {
+  text-decoration: none;
+  list-style: none;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.nav__item > button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.btn__highlight {
+
 }
 
 .slide {
@@ -238,6 +266,7 @@ li {
   padding: 0;
   width: 100%;
   height: 80%;
+  overflow: scroll;
 }
 
 
@@ -338,19 +367,15 @@ Contact page
 ==========
 */
 
-.contact__text {
-  position: relative;
-  left: 50%;
-}
-
 .contact__page {
   height: 100vh;
   width: 100vw;
-  /* position: absolute; */
+  position: relative;
+  overflow: scroll;
 }
 
 .icon {
-  position: relative;
+  position: absolute;
   height: 250px;
   width: 250px;
   left: 50%;
@@ -363,10 +388,22 @@ Contact page
   justify-content: center;
   align-items: center;
   position: relative;
-  height:  500px;
-  width: 1000px;
+  /* height:  500px;
+  width: 1000px; */
   border: 1px #fff;
   left: 50%;
   top: 60%;
+}
+
+.right__panel {
+  border: 1px solid #fff;
+  height: 300px;
+  width: 300px;
+}
+
+.left__panel {
+  border: 1px solid #fff;
+  height: 300px;
+  width: 300px;
 }
 

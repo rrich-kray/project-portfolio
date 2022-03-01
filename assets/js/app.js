@@ -98,6 +98,7 @@ const projects = [
 ];
 
 const carouselBtns = document.querySelectorAll("[data-carousel-button]");
+const navBtns = document.querySelector("[data-nav-button]");
 const columnClasses = [
   "grid-column-span-1",
   "grid-column-span-2",
@@ -126,18 +127,14 @@ carouselBtns.forEach((btn) => {
     ) {
       loadProjects();
       return;
-    } else if (
-      document.querySelector("[data-active]").classList.contains("conact__page")
-    ) {
-      loadContactPage();
-      remove;
     }
   });
 });
 
 const loadProjects = () => {
+  let projectsSection = document.querySelector(".projects");
+  projectsSection.innerHTML = ``;
   projects.forEach((project) => {
-    let projectsSection = document.querySelector(".projects");
     projectsSection.innerHTML += `
     
         <div class="project__tile" style="background-image: url(${project.backgroundImage})">
@@ -156,9 +153,7 @@ const loadProjects = () => {
   });
 };
 
-const loadContactPage = () => {
-  let contactSection = document.querySelector(".contact__page");
-};
+const formatNavBtns = () => {};
 
 setInterval(() => {
   const landingPage = document.querySelector(".landing__page");
