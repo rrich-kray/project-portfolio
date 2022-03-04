@@ -124,11 +124,13 @@ li {
   color: #fff;
   z-index: 1;
   cursor: pointer;
-  font: var(--ff-secondary)
+  font: var(--ff-secondary);
 }
 
-.btn__highlight {
-
+.highlight {
+  border-bottom: gold;
+  color: gold;
+  transition: 1s linear;
 }
 
 .slide {

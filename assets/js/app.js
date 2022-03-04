@@ -155,15 +155,25 @@ const loadProjects = () => {
 
 navBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    document.querySelector(".highlight").classList.remove("highlight");
+    e.target.classList.add("highlight");
+
     const slideContainer = btn
       .closest("[data-carousel]")
       .querySelector("[data-slides]");
 
-    const activeSlide = slideContainer.querySelector("[data-active]");
+    let activeSlide = slideContainer.querySelector("[data-active]");
+    delete activeSlide.dataset.active;
+    slideContainer.querySelector(
+      `.${e.target.dataset.navButton}`
+    ).dataset.active = true;
+    activeSlide = slideContainer.querySelector("[data-active]");
+
+    if (activeSlide.classList.contains("projects__page")) loadProjects();
   });
 });
 
-const formatNavBtns = () => {};
+const highlightBtn = () => {};
 
 setInterval(() => {
   const landingPage = document.querySelector(".landing__page");
