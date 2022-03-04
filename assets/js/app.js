@@ -144,8 +144,8 @@ const loadProjects = () => {
                 <p style="background-image: url(${project.backgroundImage})">${project.description}</p>
             </div>
     
-            <a href=${project.ghRepository}><div class="ribbon git"><img src="../images/github-svgrepo-com.svg" alt=""></img></div></a>
-            <a href=${project.deployed}><div class="ribbon deployed"><img src="../images/www.svg" alt=""></img></div></a>
+            <div class="ribbon git"><a href=${project.ghRepository}><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
+            <div class="ribbon deployed"><a href=${project.deployed}><img src="assets/images/www.svg" alt=""></a></div>
     
         </div>
                 

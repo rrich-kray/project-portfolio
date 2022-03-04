@@ -291,8 +291,18 @@ tile classes
 
 .project__tile > .ribbon {
   height: 75px; 
-  width: 50px;
+  width: 60px;
   background-color: rgba(100, 100, 100, 0.75);
+  position: absolute;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project__tile > .ribbon > a > img {
+  cursor: pointer;
+  height: 50px;
 }
 
 .project__tile > .panel {
@@ -315,7 +325,6 @@ tile classes
   -webkit-background-clip: text;
   position: relative;
   text-align: center;
-  top: 30%;
 }
 
 .project__tile a {
@@ -335,7 +344,7 @@ tile classes
 .git {
   position: absolute;
   top: 0%;
-  right: 20%;
+  right: 25%;
 }
 
 .deployed {
