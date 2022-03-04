@@ -67,6 +67,7 @@ html, body {
   background: black;
   color: var(--clr-primary-10);
   height: 100%;
+  font: var(--ff-secondary)
 }
 
 h1,
@@ -123,6 +124,7 @@ li {
   color: #fff;
   z-index: 1;
   cursor: pointer;
+  font: var(--ff-secondary)
 }
 
 .btn__highlight {
@@ -300,6 +302,19 @@ tile classes
   align-items: center;
 }
 
+.project__tile > .ribbon:hover {
+  animation: elongate 200ms forwards;
+}
+
+@keyframes elongate {
+  50% {
+    height: 80px;
+  }
+  100% {
+    height: 85px;
+  }
+}
+
 .project__tile > .ribbon > a > img {
   cursor: pointer;
   height: 50px;
@@ -321,10 +336,14 @@ tile classes
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
   -webkit-background-clip: text;
   position: relative;
   text-align: center;
+  color: black;
+  margin-right: 5px;
+  margin-left: 5px;
+  font: var(--ff-secondary)
 }
 
 .project__tile a {
@@ -385,7 +404,7 @@ Contact page
   width: 100vw;
   position: relative;
   overflow: scroll;
-  background-color: var(--clr-grey-1)
+  background-color: var(--clr-grey-6)
 }
 
 .contact__page > img {
@@ -393,7 +412,7 @@ Contact page
   top: 25%;
   height: 200px;
   width: auto;
-  animation: bounce 2s forwards infinite alternate;
+  animation: bounce 2s infinite alternate;
 }
 
 @keyframes bounce {

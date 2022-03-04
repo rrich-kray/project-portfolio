@@ -75,7 +75,7 @@ const projects = [
     description:
       "Application that stores user notes within an express.js server.",
     backgroundImage:
-      "https://raw.githubusercontent.com/rrich-kray/password-generator/main/Develop/assets/images/RPG.png",
+      "https://raw.githubusercontent.com/rrich-kray/express-note-taker/main/assets/images/screen1.png",
   },
   {
     id: 9,
@@ -144,8 +144,8 @@ const loadProjects = () => {
                 <p style="background-image: url(${project.backgroundImage})">${project.description}</p>
             </div>
     
-            <div class="ribbon git"><a href=${project.ghRepository}><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
-            <div class="ribbon deployed"><a href=${project.deployed}><img src="assets/images/www.svg" alt=""></a></div>
+            <div class="ribbon git"><a href=${project.ghRepository} target="_blank"><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
+            <div class="ribbon deployed"><a href=${project.deployed} target="_blank"><img src="assets/images/www.svg" alt=""></a></div>
     
         </div>
                 
