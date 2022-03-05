@@ -173,8 +173,6 @@ navBtns.forEach((btn) => {
   });
 });
 
-const highlightBtn = () => {};
-
 setInterval(() => {
   const landingPage = document.querySelector(".landing__page");
   landingPage.innerHTML = `<h1 class="welcome__text">${
