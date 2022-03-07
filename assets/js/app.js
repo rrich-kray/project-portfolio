@@ -104,7 +104,7 @@ const columnClasses = [
   "grid-column-span-2",
   "grid-column-span-3",
 ];
-const welcomePhrases = ["Welcome"];
+const welcomePhrases = ["Welcome to my portfolio page"];
 
 carouselBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -152,60 +152,11 @@ const loadProjects = () => {
         `;
 
     const deployedRibbon = document.querySelector(".deployed");
-    if (!project.deployed) {
+    if (!project.deploymentLink) {
       deployedRibbon.parentNode.removeChild(deployedRibbon);
     }
   });
 };
-
-// const loadProjects = () => {
-//   let projectsSection = document.querySelector(".projects");
-//   projectsSection.innerHTML = ``;
-
-//   projects.forEach((project) => {
-//     let projectTile = document.createElement("div");
-//     let panel = document.createElement("div");
-//     let projectName = document.createElement("h5");
-//     let projectDescription = document.createElement(`p`);
-//     let ribbon = document.createElement("div");
-//     let projectRepository = document.createElement("div");
-//     let icon = document.createElement("div");
-
-//     projectTile.setAttribute(
-//       "style",
-//       `background-image: url(${project.backgroundImage}`
-//     );
-//     panel.classList.add("panel");
-//     projectName.setAttribute(
-//       "style",
-//       `background-image: url(${project.backgroundImage})`
-//     );
-//     projectName.textContent = project.name;
-//     projectDescription.textContent = project.description;
-//     ribbon.classList.add("ribbon", "git");
-//     projectRepository.setAttribute("target", "blank");
-//     icon.setAttribute("src", "assets/images/github-svgrepo-com.svg");
-
-//     projectRepository.appendChild(icon);
-//     ribbon.appendChild(projectRepository);
-//     projectTile.appendChild(ribbon);
-//     panel.appendChild(projectName);
-//     panel.appendChild(projectDescription);
-//     projectTile.appendChild(panel);
-
-//     if (project.deployed) {
-//       let deployed = document.createElement("div");
-//       let deployedLink = document.createElement("a");
-//       let deployedIcon = document.createElement("img");
-//       deployedIcon.setAttribute("src", "assets/images/www.svg");
-//       deployed.classList.add("ribbon", "deployed");
-//       deployedLink.setAttribute("target", "_blank");
-//       deployedLink.setAttribute("href", project.deployed);
-//       deployedLink.appendChild(deployedIcon);
-//       deployed.appendChild(deployedLink);
-//     }
-//   });
-// };
 
 navBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
