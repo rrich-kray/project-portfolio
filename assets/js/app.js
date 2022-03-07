@@ -135,6 +135,7 @@ const loadProjects = () => {
   let projectsSection = document.querySelector(".projects");
   projectsSection.innerHTML = ``;
   projects.forEach((project) => {
+    console.log(project.deploymentLink);
     projectsSection.innerHTML += `
 
         <div class="project__tile" style="background-image: url(${project.backgroundImage})">
