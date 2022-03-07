@@ -135,7 +135,6 @@ const loadProjects = () => {
   let projectsSection = document.querySelector(".projects");
   projectsSection.innerHTML = ``;
   projects.forEach((project) => {
-    console.log(project.deploymentLink);
     projectsSection.innerHTML += `
 
         <div class="project__tile" style="background-image: url(${project.backgroundImage})">
@@ -146,7 +145,7 @@ const loadProjects = () => {
             </div>
 
             <div class="ribbon git"><a href=${project.ghRepository} target="_blank"><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
-            <div class="ribbon deployed"><a href=${project.deploymentLink} target="_blank"><img src="assets/images/www.svg" alt=""></a></div>
+            
 
         </div>
 
