@@ -146,7 +146,6 @@ const loadProjects = () => {
 
             <div class="ribbon git"><a href=${project.ghRepository} target="_blank"><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
             
-
         </div>
 
         `;
