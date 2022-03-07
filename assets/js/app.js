@@ -42,7 +42,7 @@ const projects = [
   {
     id: 5,
     name: "Taskinator",
-    ghRepository: "",
+    ghRepository: "https://github.com/rrich-kray/taskinator",
     deploymentLink: "https://rrich-kray.github.io/taskinator/",
     description: "To-Do list application.",
     backgroundImage:
@@ -149,11 +149,6 @@ const loadProjects = () => {
         </div>
 
         `;
-
-    // const deployedRibbon = document.querySelector(".deployed");
-    // if (!project.deploymentLink) {
-    //   deployedRibbon.parentNode.removeChild(deployedRibbon);
-    // }
   });
 };
 
