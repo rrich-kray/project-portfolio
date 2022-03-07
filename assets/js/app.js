@@ -136,22 +136,76 @@ const loadProjects = () => {
   projectsSection.innerHTML = ``;
   projects.forEach((project) => {
     projectsSection.innerHTML += `
-    
+
         <div class="project__tile" style="background-image: url(${project.backgroundImage})">
-    
+
             <div class="panel">
                 <h5 style="background-image: url(${project.backgroundImage})">${project.name}</h5>
-                <p style="background-image: url(${project.backgroundImage})">${project.description}</p>
+                <p>${project.description}</p>
             </div>
-    
+
             <div class="ribbon git"><a href=${project.ghRepository} target="_blank"><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
             <div class="ribbon deployed"><a href=${project.deployed} target="_blank"><img src="assets/images/www.svg" alt=""></a></div>
-    
+
         </div>
-                
+
         `;
+
+    const deployedRibbon = document.querySelector(".deployed");
+    if (!project.deployed) {
+      deployedRibbon.parentNode.removeChild(deployedRibbon);
+    }
   });
 };
+
+// const loadProjects = () => {
+//   let projectsSection = document.querySelector(".projects");
+//   projectsSection.innerHTML = ``;
+
+//   projects.forEach((project) => {
+//     let projectTile = document.createElement("div");
+//     let panel = document.createElement("div");
+//     let projectName = document.createElement("h5");
+//     let projectDescription = document.createElement(`p`);
+//     let ribbon = document.createElement("div");
+//     let projectRepository = document.createElement("div");
+//     let icon = document.createElement("div");
+
+//     projectTile.setAttribute(
+//       "style",
+//       `background-image: url(${project.backgroundImage}`
+//     );
+//     panel.classList.add("panel");
+//     projectName.setAttribute(
+//       "style",
+//       `background-image: url(${project.backgroundImage})`
+//     );
+//     projectName.textContent = project.name;
+//     projectDescription.textContent = project.description;
+//     ribbon.classList.add("ribbon", "git");
+//     projectRepository.setAttribute("target", "blank");
+//     icon.setAttribute("src", "assets/images/github-svgrepo-com.svg");
+
+//     projectRepository.appendChild(icon);
+//     ribbon.appendChild(projectRepository);
+//     projectTile.appendChild(ribbon);
+//     panel.appendChild(projectName);
+//     panel.appendChild(projectDescription);
+//     projectTile.appendChild(panel);
+
+//     if (project.deployed) {
+//       let deployed = document.createElement("div");
+//       let deployedLink = document.createElement("a");
+//       let deployedIcon = document.createElement("img");
+//       deployedIcon.setAttribute("src", "assets/images/www.svg");
+//       deployed.classList.add("ribbon", "deployed");
+//       deployedLink.setAttribute("target", "_blank");
+//       deployedLink.setAttribute("href", project.deployed);
+//       deployedLink.appendChild(deployedIcon);
+//       deployed.appendChild(deployedLink);
+//     }
+//   });
+// };
 
 navBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
