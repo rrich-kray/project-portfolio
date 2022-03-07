@@ -145,7 +145,7 @@ const loadProjects = () => {
             </div>
 
             <div class="ribbon git"><a href=${project.ghRepository} target="_blank"><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
-            <div class="ribbon deployed"><a href=${project.deployed} target="_blank"><img src="assets/images/www.svg" alt=""></a></div>
+            <div class="ribbon deployed"><a href=${project.deploymentLink} target="_blank"><img src="assets/images/www.svg" alt=""></a></div>
 
         </div>
 
