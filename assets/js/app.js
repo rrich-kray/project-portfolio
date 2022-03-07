@@ -145,15 +145,15 @@ const loadProjects = () => {
             </div>
 
             <div class="ribbon git"><a href=${project.ghRepository} target="_blank"><img src="assets/images/github-svgrepo-com.svg" alt=""></a></div>
-            
+
         </div>
 
         `;
 
-    const deployedRibbon = document.querySelector(".deployed");
-    if (!project.deploymentLink) {
-      deployedRibbon.parentNode.removeChild(deployedRibbon);
-    }
+    // const deployedRibbon = document.querySelector(".deployed");
+    // if (!project.deploymentLink) {
+    //   deployedRibbon.parentNode.removeChild(deployedRibbon);
+    // }
   });
 };
 
