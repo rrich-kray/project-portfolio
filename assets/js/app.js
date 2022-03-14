@@ -95,6 +95,15 @@ const projects = [
     backgroundImage:
       "https://raw.githubusercontent.com/rrich-kray/ecommerce-product-database/master/assets/images/screen1.png",
   },
+  {
+    id: 11,
+    name: "Coders Cave",
+    ghRepository: "https://github.com/perfect-perfect/coders-cave",
+    deploymentLink: "",
+    description: "Message board for coders.",
+    backgroundImage:
+      "https://raw.githubusercontent.com/perfect-perfect/coders-cave/main/public/cc.JPG",
+  },
 ];
 
 const carouselBtns = document.querySelectorAll("[data-carousel-button]");
